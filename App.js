@@ -116,6 +116,7 @@ function App(){
           )
         }}
       />
+      console.log()
         <Tabs.Screen
         name="ProfileName"
         component={Profile}
