@@ -12,7 +12,8 @@ import AnimatedTabBar from '@gorhom/animated-tabbar';
 import Icon from 'react-native-vector-icons/Ionicons'
 import HomeScreen from './Home'
 import Profile from './Profile'
-import Login from './android/app/src/components/login'
+import Login from './android/app/src/components/login';
+import PaymentScreen from './android/app/src/components/paymentConfirmationPage'
 
 
 // const tabs = {
@@ -65,7 +66,8 @@ function App(){
   
   return (
     <View>
-      <Login/>
+      <PaymentScreen/>
+      {/* <Login/> */}
     </View>
   )
 
