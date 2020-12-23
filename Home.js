@@ -15,6 +15,7 @@ function Home (props){
           fn,
         };
         i18n.locale=langyage 
+        
     },[langyage])
 
     return (
@@ -22,7 +23,7 @@ function Home (props){
             <Text onPress={() => navigation.jumpTo('Profile')}
             >{i18n.t('update')}</Text>
               <Pressable
-            style={({ pressed }) => [
+            style={({ pressed }) => [ 
                 {
                   backgroundColor: pressed
                     ? "#777"
