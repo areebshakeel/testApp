@@ -58,7 +58,7 @@ function PaymentConfirmationPage(props) {
           </Text>
         </View>
         <View>
-          {/* <Button title="Reached destination" icon={() => ''} /> */}
+          {/* <Button title="Reached destination" icon={() => ''} />i */}
         </View>
       </View>
     </ScrollView>
