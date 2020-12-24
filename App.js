@@ -66,8 +66,8 @@ function App(){
   
   return (
     <View>
-      <PaymentScreen/>
-      {/* <Login/> */}
+      {/* <PaymentScreen/> */}
+      <Login/>
     </View>
   )
 
