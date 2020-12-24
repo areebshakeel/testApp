@@ -39,6 +39,9 @@ const Login = () => {
                         <EntypoIcon name="eye-with-line" size={30} color="#707070" style={{ marginTop: 5, marginLeft: 180 }} />
 
                     </View>
+                    <View>
+                        
+                    </View>
                 </View>
 
             </ScrollView>
