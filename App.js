@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import HomeScreen from './Home'
 import Profile from './Profile'
 import Login from './android/app/src/components/login';
-import PaymentScreen from './android/app/src/components/paymentConfirmationPage'
+import PaymentScreen from './android/app/src/components/index'
 
 
 // const tabs = {
