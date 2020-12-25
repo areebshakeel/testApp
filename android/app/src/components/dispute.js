@@ -6,7 +6,7 @@ import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {set} from 'react-native-reanimated';
 import IonIcon from 'react-native-vector-icons/Zocial';
 
-export default function Dispute(params) {
+export default function Dispute(props) {
     return(
         <View style={{alignItems: 'center', marginTop: 20}}>
         <Image
@@ -25,7 +25,7 @@ export default function Dispute(params) {
             <TouchableOpacity style={styles.disputeButton}>
               <Text style={{textAlign: 'center'}}>Dispute</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.waitButton}>
+            <TouchableOpacity onPress={()=> props.tagFalse()} style={styles.waitButton}>
               <Text style={{textAlign: 'center', color: 'white'}}>
                 Wait
               </Text>

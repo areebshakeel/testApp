@@ -20,7 +20,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 const Login = () => {
   const [isHidden, setIsHidden] = useState(true)
   const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const toggleSwitch = () => setIsEnabled( !isEnabled);
   return (
     //    <Container>
     //        <Content style={{flex:1,backgroundColor:"red"}}>

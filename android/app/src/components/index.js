@@ -18,14 +18,14 @@ export default function Payment() {
 
 
 function flagFalse(){
-  setFlag(false)
+  setFlag(!flag)
 }
 function badgeFalse(){
-  setBadge(false)
+  setBadge(!badge)
 }
 
 function tagFalse() {
-  setTag(false)
+  setTag(!tag)
 }
   return (
     <ScrollView>
@@ -33,7 +33,7 @@ function tagFalse() {
         {tag ? (
          <PaymentConfirm/>
         ) : (
-         <Dispute/>
+         <Dispute tagFalse={tagFalse} />
         )}
 
         {flag && badge ? (
