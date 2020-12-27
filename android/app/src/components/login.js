@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -9,18 +9,18 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
-import { Container, Content } from 'native-base';
+import {Container, Content} from 'native-base';
 import Logo from '../assets/logo.png';
-import { ScrollView } from 'react-native-gesture-handler';
+import {ScrollView} from 'react-native-gesture-handler';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import SocialMeidaButton from '../common/socialMediaButton';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 const Login = () => {
-  const [isHidden, setIsHidden] = useState(true)
+  const [isHidden, setIsHidden] = useState(true);
   const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled( !isEnabled);
+  const toggleSwitch = () => setIsEnabled(!isEnabled);
   return (
     //    <Container>
     //        <Content style={{flex:1,backgroundColor:"red"}}>
@@ -31,13 +31,13 @@ const Login = () => {
     //        </Content>
     //    </Container>
 
-    <ScrollView >
+    <ScrollView>
       <View style={styles.container}>
-        <Image source={Logo} style={{ width: 100, height: 100 }} />
+        <Image source={Logo} style={{width: 100, height: 100}} />
         <Text style={styles.logoText}>Find food you love</Text>
         <Text style={styles.description}>
           Discover the best food from over 1,000 resturants
-          </Text>
+        </Text>
       </View>
 
       <View style={styles.inputContainer}>
@@ -46,7 +46,7 @@ const Login = () => {
             name="user"
             size={30}
             color="#707070"
-            style={{ marginTop: 5 }}
+            style={{marginTop: 5}}
           />
           <TextInput style={styles.inputText} placeholder="UserName" />
         </View>
@@ -55,12 +55,30 @@ const Login = () => {
             name="lock"
             size={30}
             color="#707070"
-            style={{ marginTop: 5 }}
+            style={{marginTop: 5}}
           />
-          <TextInput secureTextEntry={isHidden ? true : false} style={styles.inputText} placeholder="Password" />
-          {isHidden ? <EntypoIcon Button onPress={() => setIsHidden(false)} name="eye-with-line" size={25} color="#707070" /> :
-            <EntypoIcon Button onPress={()=>setIsHidden(true)} name="eye" size={25} color="#707070" />
-          }
+          <TextInput
+            secureTextEntry={isHidden ? true : false}
+            style={styles.inputText}
+            placeholder="Password"
+          />
+          {isHidden ? (
+            <EntypoIcon
+              Button
+              onPress={() => setIsHidden(false)}
+              name="eye-with-line"
+              size={25}
+              color="#707070"
+            />
+          ) : (
+            <EntypoIcon
+              Button
+              onPress={() => setIsHidden(true)}
+              name="eye"
+              size={25}
+              color="#707070"
+            />
+          )}
         </View>
       </View>
       <View style={styles.remberContainer}>
@@ -68,8 +86,7 @@ const Login = () => {
           <Text style={styles.rememberText}>Remember Me</Text>
         </View>
         <View>
-          <Switch onValueChange={toggleSwitch}
-        value={isEnabled} />
+          <Switch onValueChange={toggleSwitch} value={isEnabled} />
         </View>
       </View>
       <TouchableOpacity style={styles.authBtnContainer}>
@@ -90,7 +107,7 @@ const Login = () => {
             color: '#2196F3',
           }}>
           OR
-          </Text>
+        </Text>
         <View style={styles.borderLine}></View>
       </View>
       <View style={styles.socialMediaButtonContainer}>
@@ -110,8 +127,16 @@ const Login = () => {
         />
       </View>
       <View style={styles.haveAnAccountContainer}>
-        <Text style={{ paddingLeft: 4 }}>Do You Have An Account?</Text>
-        <Text style={{ color: "#2196F3", textDecorationLine: 'underline', fontStyle: 'italic' }}> Sign Up</Text>
+        <Text style={{paddingLeft: 4}}>Do You Have An Account?</Text>
+        <Text
+          style={{
+            color: '#2196F3',
+            textDecorationLine: 'underline',
+            fontStyle: 'italic',
+          }}>
+          {' '}
+          Sign Up
+        </Text>
       </View>
     </ScrollView>
   );
@@ -124,20 +149,23 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 10,
+    marginTop: 8,
     lineHeight: 300,
   },
   logoText: {
     color: '#2196F3',
     fontSize: 30,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: 6,
   },
   description: {
     color: '#9A9A9A',
     width: 205,
     textAlign: 'center',
-    marginTop: 10,
+    marginTop: 6,
+  },
+  inputContainer: {
+    alignItems: 'center',
   },
   inputs: {
     flex: 1,
@@ -150,24 +178,27 @@ const styles = StyleSheet.create({
     borderColor: '#707070',
     borderRadius: 10,
     padding: 4,
-    margin: 10,
+    margin: 6,
+    width: '95%',
   },
 
   inputText: {
-    maxWidth: 250,
-    minWidth: 300,
-
+    maxWidth: '80%',
+    minWidth: '80%',
     textAlign: 'left',
   },
   remberContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    margin: 10,
-    marginBottom: 10,
+    alignItems: 'center',
+    margin: 8,
+    marginBottom: 4,
+    width: '95%',
   },
   rememberText: {
     fontSize: 18,
+    // textAlign:'center'
   },
   authBtnContainer: {
     flex: 1,
@@ -189,10 +220,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   forgetPasswordContainer: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    margin: 10,
+    alignItems: 'center',
+    margin: 8,
+    width: '95%',
   },
   forgetPasswordText: {
     fontSize: 16,
@@ -216,11 +249,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   socialMediaButtonContainer: {
-    flex: 1,
-    margin: 10,
+    // flex: 1,
+    alignItems:'center',
+    margin: 6,
+    width:'95%',
   },
   haveAnAccountContainer: {
-    flex: 1,
+    // flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',

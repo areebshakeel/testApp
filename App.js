@@ -14,6 +14,7 @@ import HomeScreen from './Home'
 import Profile from './Profile'
 import Login from './android/app/src/components/login';
 import PaymentScreen from './android/app/src/components/index'
+import OrderCompleteView from './android/app/src/components/orderComplete/index.js'
 
 
 // const tabs = {
@@ -66,6 +67,7 @@ function App(){
   
   return (
     <View>
+      {/* <OrderCompleteView/> */}
       <PaymentScreen/>
       {/* <Login/> */}
     </View>

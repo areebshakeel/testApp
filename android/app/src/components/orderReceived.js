@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   noButton: {
-    width: 180,
+    width: 150,
     borderTopWidth: 1,
     borderBottomWidth: 1,
     borderLeftWidth: 1,
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   yesButton: {
-    width: 180,
+    width: 150,
     borderColor: '#464951',
     backgroundColor: '#2196F3',
     padding: 18,
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     // flex: 0.1,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    width: 400,
+    width: 350,
     marginTop: 20,
   },
   waitText: {

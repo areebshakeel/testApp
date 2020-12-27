@@ -9,7 +9,27 @@ import IonIcon from 'react-native-vector-icons/Zocial';
 export default function ReachDestination(props){
 
     return(
-<View style={{marginTop: 20}}>
+<View style={{marginTop: 20, alignItems:'center'}}>
+<Text
+        style={{
+          fontSize: 20,
+          fontWeight: 'bold',
+          color: '#3D3D3D',
+          textAlign: 'center',
+          marginTop: 10,
+          width: 250,
+        }}>
+        Your order will be ready in{' '}
+        <Text
+          style={{
+            color: '#2196F3',
+            fontSize: 30,
+            fontWeight: 'bold',
+          }}>
+          23 Min...
+        </Text>
+      </Text>
+      
   <TouchableOpacity onPress={() => props.flagFalse()} style={styles.reach}>
     <Text style={{color: '#C2C2C2', textAlign: 'center'}}>
       Reached destination
@@ -48,9 +68,11 @@ const styles = StyleSheet.create({
   },
   reach: {
     backgroundColor: '#989898',
-    width: 330,
-    padding: 15,
+    // width: 330,
+    paddingVertical: 20,
+    paddingHorizontal:120,
     borderRadius: 10,
+    marginTop:20
   },
   noButton: {
     width: 180,

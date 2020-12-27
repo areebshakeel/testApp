@@ -5,43 +5,53 @@ import Logo from '../assets/logo.png';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {set} from 'react-native-reanimated';
 import IonIcon from 'react-native-vector-icons/Zocial';
-import ReachDestination from './reachDestination'
-import OrderReceived from './orderReceived'
-import OrderReady from './orderReady'
-import PaymentConfirm from './paymentConfirm'
-import Dispute from './dispute'
+import ReachDestination from './reachDestination';
+import OrderReceived from './orderReceived';
+import OrderReady from './orderReady';
+import PaymentConfirm from './paymentConfirm';
+import OrderCompeletd from './orderComplete'
+import Dispute from './dispute';
 // import { white } from 'react-native-paper/lib/typescript/styles/colors';
 export default function Payment() {
   const [flag, setFlag] = useState(true);
   const [badge, setBadge] = useState(true);
   const [tag, setTag] = useState(true);
+  const [isorderDone, setIsOrderDone] = useState(false);
 
+  function flagFalse() {
+    setFlag(!flag);
+  }
+  function badgeFalse() {
+    setBadge(!badge);
+  }
 
-function flagFalse(){
-  setFlag(!flag)
-}
-function badgeFalse(){
-  setBadge(!badge)
-}
+  function tagFalse() {
+    setTag(!tag);
+  }
 
-function tagFalse() {
-  setTag(!tag)
-}
+  function orderDone() {
+    setIsOrderDone(true);
+    // alert(isorderDone);/
+  }
   return (
     <ScrollView>
       <View style={styles.container}>
         {tag ? (
-         <PaymentConfirm/>
-        ) : (
-         <Dispute tagFalse={tagFalse} />
-        )}
+          <PaymentConfirm />
+        ) :( !tag && !isorderDone ? 
+          <Dispute tagFalse={tagFalse} orderDone={orderDone} />:( 
+          <OrderCompeletd/>)
+        )
+         
+        
+        }
 
         {flag && badge ? (
-         <ReachDestination flagFalse={flagFalse} />
+          <ReachDestination flagFalse={flagFalse} />
         ) : !flag && badge ? (
-         <OrderReceived badgeFalse={badgeFalse} />
+          <OrderReceived badgeFalse={badgeFalse} />
         ) : !flag && !badge && tag ? (
-         <OrderReady tagFalse={tagFalse} />
+          <OrderReady tagFalse={tagFalse} />
         ) : (
           <Text></Text>
         )}
