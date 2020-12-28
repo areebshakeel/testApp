@@ -1,6 +1,6 @@
-import {View} from 'native-base';
+// import {} from 'native-base';
 import React from 'react';
-import {TouchableOpacity, Text} from 'react-native';
+import {View,TouchableOpacity, Text} from 'react-native';
 
 function SocialMediaButton(props) {
   return (
@@ -22,7 +22,7 @@ function SocialMediaButton(props) {
           alignItems: 'center',
           flexDirection: 'row',
         }}>
-        {props.icon() ? props.icon() : null}
+        {props.icon() ? props.icon() : ''}
 
       <Text
         style={{

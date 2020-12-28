@@ -17,7 +17,7 @@ import EntypoIcon from 'react-native-vector-icons/Entypo';
 import SocialMeidaButton from '../common/socialMediaButton';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-const Login = () => {
+const Login = (props) => {
   return (
     //    <Container>
     //        <Content style={{flex:1,backgroundColor:"red"}}>
