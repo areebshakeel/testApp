@@ -142,12 +142,12 @@ const styles = StyleSheet.create({
     borderColor: '#464951',
     borderRadius: 8,
     paddingVertical: 20,
-    paddingHorizontal:65,  },
+    paddingHorizontal:63,  },
   waitButton: {
     // width: 170,
     backgroundColor: '#2196F3',
     paddingVertical: 20,
-    paddingHorizontal:65,
+    paddingHorizontal:69,
     borderRadius: 8,
   },
   receiveButton: {

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -9,13 +9,13 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
-import {Container, Content} from 'native-base';
+import { Container, Content } from 'native-base';
 import Logo from '../../assets/logo.png';
-import {ScrollView} from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import SocialMeidaButton from '../common/socialMediaButton';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Login = () => {
   const [isHidden, setIsHidden] = useState(true);
@@ -32,8 +32,10 @@ const Login = () => {
     //    </Container>
 
     <ScrollView>
+      <View style={{marginTop:50}}>
       <View style={styles.container}>
-        <Image source={Logo} style={{width: 100, height: 100}} />
+        <View style={{width:200, height:180}} />
+        {/* <Image resizeMode="contain" source={Logo} style={{ width: 200, height: 180 }} /> */}
         <Text style={styles.logoText}>Find food you love</Text>
         <Text style={styles.description}>
           Discover the best food from over 1,000 resturants
@@ -45,22 +47,24 @@ const Login = () => {
           <AntIcon
             name="user"
             size={30}
-            color="#707070"
-            style={{marginTop: 5}}
+            color="#9A9A9A"
+            style={{ marginTop: 5 }}
           />
-          <TextInput style={styles.inputText} placeholder="UserName" />
+          <TextInput style={styles.inputText} placeholder="UserName" placeholderTextColor="#9A9A9A" />
         </View>
         <View style={styles.inputs}>
           <AntIcon
             name="lock"
             size={30}
-            color="#707070"
-            style={{marginTop: 5}}
+            color="#9A9A9A"
+            style={{ marginTop: 5 }}
           />
           <TextInput
             secureTextEntry={isHidden ? true : false}
             style={styles.inputText}
             placeholder="Password"
+            placeholderTextColor="#9A9A9A"
+
           />
           {isHidden ? (
             <EntypoIcon
@@ -68,17 +72,17 @@ const Login = () => {
               onPress={() => setIsHidden(false)}
               name="eye-with-line"
               size={25}
-              color="#707070"
+              color="#9A9A9A"
             />
           ) : (
-            <EntypoIcon
-              Button
-              onPress={() => setIsHidden(true)}
-              name="eye"
-              size={25}
-              color="#707070"
-            />
-          )}
+              <EntypoIcon
+                Button
+                onPress={() => setIsHidden(true)}
+                name="eye"
+                size={25}
+                color="#9A9A9A"
+              />
+            )}
         </View>
       </View>
       <View style={styles.remberContainer}>
@@ -91,7 +95,7 @@ const Login = () => {
       </View>
       <TouchableOpacity style={styles.authBtnContainer}>
         <View style={styles.authButtonText}>
-          <Text style={styles.authBtn}>Login</Text>
+          <Text style={styles.authBtn}>Sign In</Text>
         </View>
       </TouchableOpacity>
       <View style={styles.forgetPasswordContainer}>
@@ -101,12 +105,12 @@ const Login = () => {
         <View style={styles.borderLine}></View>
         <Text
           style={{
-            paddingLeft: 10,
-            paddingRight: 10,
+            paddingLeft: 15,
+            paddingRight: 5,
             fontSize: 18,
+            // fontWeight: 'bold',
             color: '#2196F3',
-          }}>
-          OR
+          }}>OR
         </Text>
         <View style={styles.borderLine}></View>
       </View>
@@ -114,20 +118,20 @@ const Login = () => {
         <SocialMeidaButton
           color="white"
           backgroundColor="#3b5998"
-          title="Facebook"
-          icon={() => <Icon name="facebook-square" size={30} color="white" />}
+          title="Connect with Facebook"
+          icon={() => <Icon name="facebook" size={30} color="white" />}
         />
       </View>
       <View style={styles.socialMediaButtonContainer}>
         <SocialMeidaButton
           color="white"
           backgroundColor="#2196F3"
-          title="Google"
-          icon={() => <Icon name="mail" size={30} color="white" />}
+          title="Connect with Google"
+          icon={() => <Icon name="google" size={30} color="white" />}
         />
       </View>
       <View style={styles.haveAnAccountContainer}>
-        <Text style={{paddingLeft: 4}}>Do You Have An Account?</Text>
+        <Text style={{ paddingLeft: 4 }}>Do You Have An Account?</Text>
         <Text
           style={{
             color: '#2196F3',
@@ -137,6 +141,7 @@ const Login = () => {
           {' '}
           Sign Up
         </Text>
+      </View>
       </View>
     </ScrollView>
   );
@@ -161,6 +166,7 @@ const styles = StyleSheet.create({
   description: {
     color: '#9A9A9A',
     width: 205,
+    fontWeight:'bold',
     textAlign: 'center',
     marginTop: 6,
   },
@@ -178,7 +184,7 @@ const styles = StyleSheet.create({
     borderColor: '#707070',
     borderRadius: 10,
     padding: 4,
-    margin: 6,
+    margin: 8,
     width: '95%',
   },
 
@@ -192,12 +198,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    margin: 8,
+    margin: 10,
     marginBottom: 4,
     width: '95%',
   },
   rememberText: {
     fontSize: 18,
+    color: '#9A9A9A'
     // textAlign:'center'
   },
   authBtnContainer: {
@@ -229,7 +236,7 @@ const styles = StyleSheet.create({
   },
   forgetPasswordText: {
     fontSize: 16,
-    color: '#0000EE',
+    color: '#2196F3',
     textDecorationLine: 'underline',
   },
   borderLine: {
@@ -244,15 +251,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#2196F3',
   },
   borderLineContainer: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+    padding: 4
   },
   socialMediaButtonContainer: {
     // flex: 1,
-    alignItems:'center',
-    margin: 6,
-    width:'95%',
+    alignItems: 'center',
+    margin: 10,
+    width: '95%',
   },
   haveAnAccountContainer: {
     // flex: 1,
