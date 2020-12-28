@@ -10,10 +10,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { AnimatedTabBarNavigator } from "react-native-animated-nav-tab-bar";
 import AnimatedTabBar from '@gorhom/animated-tabbar';
 import Icon from 'react-native-vector-icons/Ionicons'
-import HomeScreen from './Home'
-import Profile from './Profile'
-import Login from './android/app/src/components/login';
-import PaymentScreen from './android/app/src/components/paymentConfirmationPage'
+// import HomeScreen from './Home'
+// import Profile from './Profile'
+import Login from './src/components/login';
+import PaymentScreen from './src/components/index'
+// import OrderCompleteView from './android/app/src/components/orderComplete/index.js'
+// import DisputeTab from './android/app/src/components/disputeTab'
 
 
 // const tabs = {
@@ -66,6 +68,7 @@ function App(){
   
   return (
     <View>
+      {/* <DisputeTab/> */}
       <PaymentScreen/>
       {/* <Login/> */}
     </View>
