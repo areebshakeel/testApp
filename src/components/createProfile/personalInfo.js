@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -15,6 +15,8 @@ import AntIcon from 'react-native-vector-icons/AntDesign';
 import CheckBox from '@react-native-community/checkbox';
 
 export default function PersonalInfo(props) {
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -92,7 +94,12 @@ export default function PersonalInfo(props) {
             // width:'90%',
             marginRight: 60,
           }}>
-          <CheckBox style={{backgroundColor: 'white'}} />
+          <CheckBox
+            style={{backgroundColor: 'white'}}
+            disabled={false}
+            value={toggleCheckBox}
+            onValueChange={(newValue) => setToggleCheckBox(newValue)}
+          />
           <Text
             style={{
               color: '#9A9A9A',

@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text, Image, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import MobileVerifyImage from '../../../assets/Authentication-bro.png';
+import PhoneInput from "react-native-phone-input";
+
 
 export default function VehicleRegistration() {
   return (
@@ -17,13 +19,14 @@ export default function VehicleRegistration() {
         <View style={styles.allInputsContainer}>
           <Text style={styles.label}>Phone Number*</Text>
           <View style={styles.inputContainer}>
+            <PhoneInput style={{ padding:15}} useRef='phone' />
             <TextInput style={styles.inputs} />
           </View>
         </View>
         <View style={styles.otpContainer}>
           <Text style={styles.otpHeading}>OTP Verification</Text>
           <Text style={styles.otpDescription}>
-            A verification code has been sent toyour email address
+            A verification code has been sent to your email address
           </Text>
           <View style={styles.otpInputContainer}>
             <TextInput style={styles.otpInput} />
@@ -33,7 +36,7 @@ export default function VehicleRegistration() {
           </View>
           <View style={styles.allInputsContainer}>
             <TouchableOpacity
-              onPress={() => props.flagFalse()}
+            //   onPress={}
               style={styles.nextButton}>
               <Text
                 style={{
@@ -80,22 +83,24 @@ const styles = StyleSheet.create({
     borderLeftWidth: 1,
     borderRightWidth: 1,
     borderColor: '#707070',
-    paddingHorizontal: 65,
+    // paddingHorizontal: 50,
     borderRadius: 8,
     backgroundColor: '#F8F8F8',
+    // alignItems:'flex-start',
+    flexDirection:'row'
     // flexDirection:'row',
     // justifyContent:'space-between'
   },
   allInputsContainer: {
-    padding: 4,
+    // padding: 4,
   },
   inputs: {
     // borderTopWidth: 1,
     // borderBottomWidth: 1,
     // borderLeftWidth: 1,
     // borderRightWidth: 1,
-    maxWidth: 200,
-    minWidth: 250,
+    // maxWidth: 200,
+    minWidth: 300,
     // borderColor: '#707070',
   },
   label: {
