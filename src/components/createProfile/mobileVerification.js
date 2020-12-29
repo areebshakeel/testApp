@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     // borderBottomWidth: 1,
     // borderLeftWidth: 1,
     // borderRightWidth: 1,
-    // maxWidth: 200,
+    maxWidth: 300,
     minWidth: 300,
     // borderColor: '#707070',
   },
