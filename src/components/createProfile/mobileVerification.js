@@ -57,6 +57,7 @@ export default function VehicleRegistration() {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
+    backgroundColor:'white'
   },
   mobileVerifyHeading: {
     // alignItems:'flex-start',
