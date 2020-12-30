@@ -160,6 +160,7 @@ const styles = StyleSheet.create({
   logoText: {
     color: '#2196F3',
     fontSize: 30,
+    fontFamily:'Poppins',
     fontWeight: 'bold',
     marginTop: 6,
   },
@@ -169,6 +170,7 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     textAlign: 'center',
     marginTop: 6,
+    fontFamily:'Poppins'
   },
   inputContainer: {
     alignItems: 'center',

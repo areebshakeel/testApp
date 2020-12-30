@@ -15,7 +15,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import Login from './src/components/login';
 import PaymentScreen from './src/components/index'
 // import OrderCompleteView from './android/app/src/components/orderComplete/index.js'
-import DisputeTab from './src/components/disputeTab/'
+// import DisputeTab from './src/components/disputeTab/'
 import WelcomeScreen from './src/components/welcomeScreen'
 
 // const tabs = {
@@ -68,9 +68,10 @@ function App(){
   
   return (
     <View>
+      {/* <DisputeTab/> */}
       {/* <WelcomeScreen/> */}
-      {/* <PaymentScreen/> */}
-      <Login/>
+      <PaymentScreen/>
+      {/* <Login/> */}
     </View>
   )
 
