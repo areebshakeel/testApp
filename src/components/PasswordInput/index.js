@@ -20,7 +20,7 @@ export default function PasswordInput(props) {
             { isHidden?
             <EntypoIcon name="eye-with-line" size={30} color='#707070'  style={{marginLeft:10}} />
             :
-            <EntypoIcon onPress={()=>setIsHidden(false)}  name="eye" size={30} color='#707070'  style={{marginLeft:10}} />
+            <EntypoIcon onPress={()=>setIsHidden(!isHidden)}  name="eye" size={30} color='#707070'  style={{marginLeft:10}} />
 
             }
         </View>

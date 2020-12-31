@@ -12,26 +12,33 @@ import Icon from 'react-native-vector-icons/AntDesign'
 import CheckBox from '@react-native-community/checkbox';
 import PaymentCards from '../paymentsCards'
 import { ScrollView } from 'react-native-gesture-handler';
-import PaymentAllCards from './paymentAllCards'
 
-
-
-export default function AddMethod() {
-    return (
-        <ScrollView style={{ backgroundColor: '#FFFFFF' }} >
-            <View style={styles.container}>
-                <View style={styles.arrow} >
-                    <Icon name="arrowleft" size={30} />
+export default function paymentAllCards(props) {
+    return(
+    <View>
+        <View style={styles.addMethodContainer}>
+                    <Text style={styles.paymentText} >Payment Method</Text>
+                    <Text style={styles.addMethodText} >Add Method</Text>
                 </View>
-              
-                <View>
-                    <PaymentAllCards/>
+                <View style={styles.cardContainer} >
+                    <PaymentCards textColor="#464951" text='Credit Card' backgroundColor="#F8F8F8" icon={CreditrCardImage} />
                 </View>
-
-            </View>
-        </ScrollView>
+                <View style={styles.cardContainer} >
+                    <PaymentCards textColor="#FFFF" text='Apple Pay' backgroundColor="black" icon={AppleImage} />
+                </View  >
+                <View style={styles.cardContainer} >
+                    <PaymentCards textColor="#464951" text='Wallet        ' backgroundColor="#F8F8F8" icon={WalletImage} />
+                </View>
+                <View style={styles.cardContainer} >
+                    <PaymentCards textColor="#464951" text='Samsung Pay' backgroundColor="#F8F8F8" icon={SamsungPayIcon} />
+                </View  >
+                <View style={styles.cardContainer} >
+                    <Button backgroundColor="#2196F3" title="Next" color="#FFFF" />
+                </View>
+    </View>
     )
 }
+
 
 const styles = StyleSheet.create({
     container: {

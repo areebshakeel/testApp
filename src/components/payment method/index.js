@@ -9,8 +9,8 @@ export default function PaymentMethod(){
 return(
     <View>
         {/* { flag?<ScanYourCard/>: <AddMethod/>} */}
-        {/* <AddMethod/> */}
-        <ScanYourCard/>
+        <AddMethod/>
+        {/* <ScanYourCard/> */}
     </View>
 )
 }

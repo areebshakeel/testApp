@@ -19,6 +19,7 @@ import WelcomeScreen from './src/components/welcomeScreen'
 import CreateProfile from './src/components/createProfile'
 import PaymentMethod from './src/components/payment method'
 import ForgotPasswordScreen from './src/components/forgotPassword'
+import Wallet from './src/components/Wallet'
 
 // const tabs = {
 //   HomeScreen: { // < Screen name
@@ -76,7 +77,8 @@ function App(){
       {/* <Login/> */}
       {/* <CreateProfile/> */}
       {/* <PaymentMethod/> */}
-      <ForgotPasswordScreen/>
+      {/* <ForgotPasswordScreen/> */}
+      <Wallet/>
 
     </View>
   )
