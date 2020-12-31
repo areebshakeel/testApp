@@ -6,7 +6,7 @@ export default function Button (props){
         <TouchableOpacity style={{backgroundColor:props.backgroundColor,paddingVertical: 15,
             paddingHorizontal: 130,
             borderRadius: 8,}}>
-            <Text style={{color:props.color, textAlign:'center'}} >{props.title}</Text>
+            <Text style={{color:props.color, textAlign:'center',width:140, alignSelf:"center"}} >{props.title}</Text>
         </TouchableOpacity>
     )
 } 

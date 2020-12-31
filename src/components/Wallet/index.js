@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, StyleSheet, Image, ImageBackground } from 'react-native'
+import { Text, View, StyleSheet, Image, ImageBackground, TouchableOpacity } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import Icon from 'react-native-vector-icons/AntDesign'
 import WalletImage from '../../../assets/wallet.png'
@@ -57,7 +57,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-SemiBold'
     },
     arrow: {
-        alignSelf: 'flex-start'
+        alignSelf: 'flex-start',
+        
     },
     imagContainer: {
         marginTop:20,
