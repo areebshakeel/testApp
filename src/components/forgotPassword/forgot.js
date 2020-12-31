@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import ForgotImage from '../../../assets/forget-password-img.png'
 import Input from '../Input'
 import Button from '../Button'
@@ -8,10 +8,10 @@ import AntIcon from 'react-native-vector-icons/AntDesign'
 import Icon from 'react-native-vector-icons/AntDesign'
 
 
-export default function ForgotPassword() {
+export default function ForgotPassword( props ) {
 
     return (
-        <ScrollView>
+        <ScrollView style={{ backgroundColor: '#FFFF'}}  >
             <View style={styles.container}>
                 <View style={styles.arrow} >
                     <Icon name="arrowleft" size={30} />
@@ -26,8 +26,8 @@ export default function ForgotPassword() {
                     <View>
                         <Input label="Enter your Email Address*" />
                     </View>
-                    <View style={{marginTop:10}}  >
-                        <Button backgroundColor="#2196F3" title="Submit" color="#FFFF" />
+                    <View onPress={()=>props.flagFalse()}  style={{marginTop:10}}  >
+                        <Button  backgroundColor="#2196F3" title="Submit" color="#FFFF" />
                     </View>
                 </View>
             </View>
@@ -40,7 +40,8 @@ const styles= StyleSheet.create({
             // width:'?%',
             padding:4,
             alignItems:'center',
-            marginTop:20
+            marginTop:20,
+            backgroundColor:'#FFFF'
     },
     imageContainer:{
         alignSelf:'center'
