@@ -77,12 +77,12 @@ function App(){
       {/* <WelcomeScreen/> */}
       {/* <PaymentScreen/> */}
       {/* <Login/> */}
-      {/* <CreateProfile/> */}
+      <CreateProfile/>
       {/* <PaymentMethod/> */}
       {/* <ForgotPasswordScreen/> */}
       {/* <Wallet/> */}
       {/* <ActiveOrder/> */}
-      <AddReview/>
+      {/* <AddReview/> */}
 
 
     </View>

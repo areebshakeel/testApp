@@ -1,24 +1,21 @@
-import React, { useState } from 'react'
-import { View, Text, StyleSheet, Image } from 'react-native'
-import { ScrollView, TextInput } from 'react-native-gesture-handler'
-import Input from '../Input'
-import AntIcon from 'react-native-vector-icons/AntDesign'
-import Icon from 'react-native-vector-icons/AntDesign'
+import React, {useState} from 'react'
+import {View, Text, TextInput, StyleSheet} from 'react-native'
 import EntypoIcon from 'react-native-vector-icons/Entypo'
+import IonIcon from 'react-native-vector-icons/AntDesign'
 
-export default function PasswordInput(props) {
-    const [isHidden, setIsHidden]= useState(true)
+export default function SecurityInput (...props){
+    // alert(props.changeIsHidden)
     return (
         <View>
             <Text style={styles.labelText}>{ props.label}</Text>
         <View style={styles.container} >
             {/* <EntypoIcon name="eye" size={30} color='#707070' /> */}
-
+            <IonIcon name="lock" size={30} color='#707070' />
             <TextInput style={styles.input} secureTextEntry={ true}/>
-            { isHidden?
-            <EntypoIcon name="eye-with-line" size={30} color='#707070'  style={{marginLeft:10}} />
+            { props.isHidden?
+            <EntypoIcon  name="eye-with-line" size={30} color='#707070' />
             :
-            <EntypoIcon onPress={()=>setIsHidden(!isHidden)}  name="eye" size={30} color='#707070'  style={{marginLeft:10}} />
+            <EntypoIcon   name="eye" size={30} color='#707070'/>
 
             }
         </View>
@@ -38,14 +35,14 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent:'space-between',
+        justifyContent:'space-evenly',
         paddingHorizontal:10
         // padding:5
 
     },
     input: {
-        minWidth:'85%',
-        maxWidth:'85%'
+        minWidth:'80%',
+        maxWidth:'80%'
 
     },
     labelText:{
@@ -55,3 +52,4 @@ const styles = StyleSheet.create({
         padding:2
     }
 })
+    

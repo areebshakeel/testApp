@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -7,95 +7,52 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
-import Logo from '../../../assets/welcome.png';
+import { ScrollView } from 'react-native-gesture-handler';
+import Logo from '../../../assets/logo.png';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/AntDesign'
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import CheckBox from '@react-native-community/checkbox';
+import Input from '../Input'
+import SecurityInput from '../securityInput'
+import Button from '../Button'
+import { set } from 'react-native-reanimated';
 
 export default function PersonalInfo(props) {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [isHidden, setIsHidden]= useState(true)
+
+  function changeIsHidden() {
+    setIsHidden(!isHidden)
+  }
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Image
-          source={Logo}
-          resizeMode="contain"
-          style={{width: 200, height: 120}}
-        />
-        <View style={styles.allInputsContainer}>
-          <Text style={styles.label}>First name*</Text>
-          <View style={styles.inputContainer}>
-            <TextInput style={styles.inputs} />
-          </View>
+    <ScrollView style={{ backgroundColor: '#FFFF' }} >
+      <View style={styles.container} >
+        <View style={styles.arrow} >
+          <Icon name="arrowleft" size={30} />
         </View>
-        <View style={styles.allInputsContainer}>
-          <Text style={styles.label}>Last name*</Text>
-          <View style={styles.inputContainer}>
-            <TextInput style={styles.inputs} />
-          </View>
+        <View style={styles.imageContainer} >
+          <Image resizeMode="contain" source={Logo} style={{ height: 150 }} />
         </View>
-        <View style={styles.allInputsContainer}>
-          <Text style={styles.label}>Email Address*</Text>
-          <View style={styles.inputContainer}>
-            <TextInput style={styles.inputs} />
-          </View>
+        <View>
+          <Input label="First Name*" />
         </View>
-        <View style={styles.allInputsContainer}>
-          <Text style={styles.label}>Password*</Text>
-
-          <View style={styles.passwordInputContainer}>
-            <View style={{flexDirection: 'row'}}>
-              <AntIcon
-                name="lock"
-                size={30}
-                color="#9A9A9A"
-                style={{marginTop: 10, marginRight: 30}}
-              />
-              <TextInput style={styles.inputs} />
-              <EntypoIcon
-                name="eye-with-line"
-                size={30}
-                color="#9A9A9A"
-                style={{marginTop: 10}}
-              />
-            </View>
-          </View>
+        <View>
+          <Input label="Last Name*" />
         </View>
-        <View style={styles.allInputsContainer}>
-          <Text style={styles.label}>Re-Enter Password*</Text>
-
-          <View style={styles.passwordInputContainer}>
-            <View style={{flexDirection: 'row'}}>
-              <AntIcon
-                name="lock"
-                size={30}
-                color="#9A9A9A"
-                style={{marginTop: 10, marginRight: 30}}
-              />
-              <TextInput style={styles.inputs} />
-              <EntypoIcon
-                name="eye-with-line"
-                size={30}
-                color="#9A9A9A"
-                style={{marginTop: 10}}
-              />
-            </View>
-          </View>
+        <View>
+          <Input label="Email Address*" />
         </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: 10,
-            // width:'90%',
-            marginRight: 60,
-          }}>
+        <View>
+          <SecurityInput changeIsHidden={changeIsHidden}  isHidden={isHidden} label="Password*" />
+        </View>
+        <View>
+          <SecurityInput label="Re-Enter Password*" />
+        </View>
+        <View style={styles.checkboxContainer} >
           <CheckBox
-            style={{backgroundColor: 'white'}}
+            style={{ backgroundColor: 'white' }}
             disabled={false}
             value={toggleCheckBox}
             onValueChange={(newValue) => setToggleCheckBox(newValue)}
@@ -105,81 +62,36 @@ export default function PersonalInfo(props) {
               color: '#9A9A9A',
               fontSize: 15,
               fontFamily: 'Poppins-Regular',
-            }}>
-            I agree Terms & Conditions & Privacy Policy
+            }}>     I agree Terms & Conditions & Privacy Policy
           </Text>
         </View>
-        <TouchableOpacity
-          onPress={() => props.flagFalse()}
-          style={styles.nextButton}>
-          <Text
-            style={{
-              color: 'white',
-              fontFamily: 'Poppins-SemiBold',
-              fontSize: 15,
-            }}>
-            Next
-          </Text>
-        </TouchableOpacity>
+        <View style={{marginTop:10}} >
+          <Button title="Next" backgroundColor="#2196F3" color="#FFFF" />
+        </View>
       </View>
+
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    marginTop: 8,
-    backgroundColor: 'white',
-    
-  },
-  inputs: {
-    // borderTopWidth: 1,
-    // borderBottomWidth: 1,
-    // borderLeftWidth: 1,
-    // borderRightWidth: 1,
-    maxWidth: 200,
-    minWidth: 250,
-    // borderColor: '#707070',
-  },
-  inputContainer: {
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
-    borderColor: '#707070',
-    paddingHorizontal: 65,
-    borderRadius: 8,
-    backgroundColor: '#F8F8F8',
-    // flexDirection:'row',
-    // justifyContent:'space-between'
-  },
-  passwordInputContainer: {
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
-    borderColor: '#707070',
-    backgroundColor: '#F8F8F8',
 
-    paddingHorizontal: 20,
-    borderRadius: 8,
-    flexDirection: 'row',
-    // padding:2,
-    justifyContent: 'space-between',
-    // marginRight:20
+  container: {
+    padding: 10
   },
-  label: {
-    color: '#9A9A9A',
+  imageContainer: {
+    alignSelf: 'center',
+    marginTop: 10
   },
-  allInputsContainer: {
-    padding: 6,
+  arrow: {
+    alignSelf: 'flex-start',
+
   },
-  nextButton: {
-    backgroundColor: '#2196F3',
-    paddingVertical: 15,
-    paddingHorizontal: 180,
-    borderRadius: 8,
-  },
+  checkboxContainer:{
+    flexDirection:'row',
+    alignItems:'center',
+    marginTop:10
+    // justifyContent:'space-between',
+    // padding:5
+  }
 });
