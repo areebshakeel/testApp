@@ -7,114 +7,80 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 import VehicleImage from '../../../assets/vehicle-registration-img.png';
+import Icon from 'react-native-vector-icons/AntDesign'
+import Input from '../Input'
+import Button from '../Button'
 export default function VehicleRegistration(props) {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text style={styles.vehicleRegisterText}>Vehicle Registration</Text>
-        <Image
-          resizeMode="contain"
-          source={VehicleImage}
-          style={{width: 300, height: 170, marginTop:40}}
-        />
-        <View style={{marginTop:20}}>
-          <View style={styles.allInputsContainer}>
-            <Text style={styles.label}>License Plate Number*</Text>
-            <View style={styles.inputContainer}>
-              <TextInput style={styles.inputs} />
-            </View>
-          </View>
-          <View style={styles.allInputsContainer}>
-            <Text style={styles.label}>Make*</Text>
-            <View style={styles.inputContainer}>
-              <TextInput style={styles.inputs} />
-            </View>
-          </View>
-          <View style={styles.allInputsContainer}>
-            <Text style={styles.label}>Model*</Text>
-            <View style={styles.inputContainer}>
-              <TextInput style={styles.inputs} />
-            </View>
-          </View>
-          <View style={styles.allInputsContainer}>
-            <Text style={styles.label}>Year*</Text>
-            <View style={styles.inputContainer}>
-              <TextInput style={styles.inputs} />
-            </View>
-          </View>
-          <View style={styles.allInputsContainer}>
-            <Text style={styles.label}>Color*</Text>
-            <View style={styles.inputContainer}>
-              <TextInput style={styles.inputs} />
-            </View>
-          </View>
-          <View style={styles.allInputsContainer}>
-            <TouchableOpacity
-              onPress={() => props.badgeFalse()}
-              style={styles.nextButton}>
-              <Text
-                style={{
-                  color: 'white',
-                  fontFamily: 'Poppins-SemiBold',
-                  fontSize: 15,
-                }}>
-                Register Vehicle
-              </Text>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.arrow} >
+          <Icon name="arrowleft" size={30} />
+          <Text style={styles.skip}>Skip</Text>
         </View>
+        <View style={{ padding: 4, marginTop: 20 }}>
+          <Text style={styles.vehicleRegisterText}>Vehicle Registration</Text>
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            resizeMode="contain"
+            source={VehicleImage}
+          />
+        </View>
+        <View style={styles.inputContainer} >
+          <Input label="License Plate Number*" />
+        </View>
+        <View style={styles.inputContainer} >
+          <Input label="Make*" />
+        </View>
+        <View style={styles.inputContainer} >
+          <Input label="Model*" />
+        </View>
+        <View style={styles.inputContainer} >
+          <Input label="Year*" />
+        </View>
+        <View style={styles.inputContainer} >
+          <Input label="Color*" />
+        </View>
+        <View style={styles.inputContainer} >
+          <Button title="Register Vehicle" backgroundColor="#2196F3" color="#FFFF" />
+        </View>
+
       </View>
     </ScrollView>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    backgroundColor: 'white',
+    padding: 10,
+    backgroundColor: '#FFFF',
   },
   vehicleRegisterText: {
     color: '#2196F3',
     fontFamily: 'Poppins-Bold',
     fontSize: 24,
-    textAlign: 'left',
-    marginRight: 150,
-    marginTop:40
   },
-  inputs: {
-    // borderTopWidth: 1,
-    // borderBottomWidth: 1,
-    // borderLeftWidth: 1,
-    // borderRightWidth: 1,
-    maxWidth: 200,
-    minWidth: 250,
-    // borderColor: '#707070',
+  imageContainer: {
+    alignSelf: 'center',
+    marginTop: 20,
+    marginBottom:20
   },
-  inputContainer: {
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
-    borderColor: '#707070',
-    paddingHorizontal: 65,
-    borderRadius: 8,
-    backgroundColor: '#F8F8F8',
-    // flexDirection:'row',
-    // justifyContent:'space-between'
+  arrow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop:10
   },
-  label: {
-    color: '#9A9A9A',
-    fontWeight: 'bold',
+  
+  inputContainer:{
+    marginTop:5
   },
-  nextButton: {
-    backgroundColor: '#2196F3',
-    paddingVertical: 15,
-    paddingHorizontal: 130,
-    borderRadius: 8,
-    marginTop:8
-  },
-  allInputsContainer: {
-    padding: 4,
-  },
+  skip:{
+    fontSize:20,
+    fontFamily:'Poppins-SemiBold',
+    color:"#464951"
+  }
+
 });

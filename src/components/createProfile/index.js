@@ -17,9 +17,9 @@ export default function CreateProfile() {
   return (
     <View>
       {flag ? (
-        <PersonalInfo flagFalse={flagFalse} />
-      ) : !flag && badge ? (
         <VehicleRegistration badgeFalse={badgeFalse} />
+        ) : !flag && badge ? (
+          <PersonalInfo flagFalse={flagFalse} />
       ) : !flag && !badge ? (
         <MobileVerification />
       ) : (
