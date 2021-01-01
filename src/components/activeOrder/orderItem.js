@@ -1,6 +1,6 @@
 import React from 'react'
-import { Text, View, Image, StyleSheet } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { ScrollView,} from 'react-native-gesture-handler'
 import Icon from 'react-native-vector-icons/AntDesign'
 import WalletImage from '../../../assets/wallet.png'
 import kfcImage from '../../../assets/kfc.png'
@@ -8,7 +8,7 @@ import EntypoIcon from 'react-native-vector-icons/Entypo'
 
 export default function OrderItem(props) {
     return (
-        <View style={{padding:5,  backgroundColor: '#F9F9F9', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderRadius: 10 }} >
+        <TouchableOpacity onPress={()=>props.flagFalse()} style={{padding:5,  backgroundColor: '#F9F9F9', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderRadius: 10 }} >
             <View style={{ flexDirection: "row", alignItems: 'center' }}>
                 <View>
                     <Image source={props.orderImage} />
@@ -32,9 +32,9 @@ export default function OrderItem(props) {
                 </View>
             </View>
             <View>
-                <Text style={styles.itemText} >30 minutes</Text>
+                        <Text style={styles.itemText} >{props.time}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
 
     )
 }

@@ -5,15 +5,17 @@ import Icon from 'react-native-vector-icons/AntDesign'
 import WalletImage from '../../../assets/wallet.png'
 import kfcImage from '../../../assets/kfc.png'
 import mcdonaldsImage from '../../../assets/macdonalds.png'
-import OrderItem from './orderItem'
+import OrderItem from '../activeOrder/orderItem'
 import Button from '../Button'
-
-export default function ActiveOrder(props) {
+import StarIcon from 'react-native-vector-icons/FontAwesome'
+import TextArea from '../textArea'
+export default function AddReview(props) {
     const [flag, setFlag] = useState(true)
-
-    function flagFalse(){
+    const [badge, setBadge] = useState(true)
+    function flagFalse() {
         setFlag(false)
     }
+    const star = ['1', '2', '3', '4', '5']
 
     return (
         <ScrollView style={{ backgroundColor: '#FFFF' }} >
@@ -22,33 +24,32 @@ export default function ActiveOrder(props) {
                     <Icon name="arrowleft" size={30} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
-                    <Text style={styles.headingText} >Active Order</Text>
+                    <Text style={styles.headingText} >Add Review</Text>
                 </View>
                 <View style={styles.imagContainer} >
                     <Image resizeMode="contain" source={WalletImage} />
                 </View>
-
                 <View style={{ marginTop: 20 }}  >
                     <View >
-                        <OrderItem flagFalse={flagFalse} itemName=" AReeb" orderImage={kfcImage} location='Burj Khalifa, Dubai' />
-                    </View>
-                    <View style={{ marginTop: 10 }}>
-                        <OrderItem time="30 minutes" itemName=" Mcdonald's" orderImage={mcdonaldsImage} location='Dubai Box Park' />
+                        <OrderItem flagFalse={flagFalse} itemName=" KFC" orderImage={kfcImage} location='Burj Khalifa, Dubai' />
                     </View>
                 </View>
-
-                <View style={{ marginTop: 100 }}>
-
-                    {flag ? <View>
-                        <Button backgroundColor="#C6E2F9" color="#FFFF" title="Reached Destination" />
-                    </View> :
-                        <View>
-                            <Button backgroundColor="#C6E2F9" color="#FFFF" title="Cancel Order" />
-
-                            <Button backgroundColor="#C6E2F9" color="#FFFF" title="Reached Destination" />
-                        </View>}
-
+                <View style={styles.starIconCOntainer}>
+                    {
+                        star.map(item => <StarIcon onPress={() => setBadge(!badge)} name="star" size={25} color={badge ? "#AEAEAE" : '#2196F3'} />
+                        )
+                    }
                 </View>
+                <View style={{ marginTop: 10 }} >
+                    <TextArea placeholder="" label="Write a Review" />
+                </View>
+                <View style={{ marginTop: 10 }} >
+                <Button backgroundColor="#2196F3" color="#FFFF" title="Submit" />
+                </View>
+
+
+
+
 
 
             </View>
@@ -74,5 +75,14 @@ const styles = StyleSheet.create({
     },
     orderContainer: {
 
+    },
+    starIconCOntainer: {
+        marginTop: 10,
+        alignSelf: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        // backgroundColor:'red',
+        width: '50%',
+        alignItems: 'center'
     }
 })
