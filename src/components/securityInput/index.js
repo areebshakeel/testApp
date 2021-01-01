@@ -3,7 +3,7 @@ import {View, Text, TextInput, StyleSheet} from 'react-native'
 import EntypoIcon from 'react-native-vector-icons/Entypo'
 import IonIcon from 'react-native-vector-icons/AntDesign'
 
-export default function SecurityInput (...props){
+export default function SecurityInput (props){
     // alert(props.changeIsHidden)
     return (
         <View>

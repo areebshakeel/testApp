@@ -6,7 +6,7 @@ import Input from '../Input'
 import Button from '../Button'
 import AntIcon from 'react-native-vector-icons/AntDesign'
 import Icon from 'react-native-vector-icons/AntDesign'
-import PasswordInput from '../PasswordInput'
+import PasswordInput from '../passwordInput'
 
 export default function ResetPassword() {
 
@@ -20,9 +20,9 @@ export default function ResetPassword() {
                     <Image source={ForgotImage} />
                 </View>
                 <View style={styles.forgotPasswordHeading}>
-                    <Text style={styles.forgotPasswordHeadingText} >Reset Password ?</Text>
+                    <Text style={styles.forgotPasswordHeadingText} >Reset Password?</Text>
                 </View>
-                <View style={{ marginTop: 30 }} >
+                <View style={{ marginTop: 10, padding:10 }} >
                     <View>
                         <PasswordInput label='Enter New Password*' />
                     </View>
@@ -41,8 +41,8 @@ export default function ResetPassword() {
 const styles = StyleSheet.create({
     container: {
         // width:'?%',
-        padding: 4,
-        alignItems: 'center',
+        padding: 2,
+        // alignItems: 'center',
         marginTop: 20,
         backgroundColor: '#FFFF'
     },
@@ -56,9 +56,10 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Bold'
     },
     forgotPasswordHeading: {
+        marginTop:20,
         alignSelf: "flex-start",
-        marginLeft: 10
-        // padding:4
+        marginLeft: 10,
+        padding:2
     },
     arrow: {
         alignSelf: 'flex-start',

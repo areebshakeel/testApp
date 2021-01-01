@@ -30,10 +30,10 @@ export default function ActiveOrder(props) {
 
                 <View style={{ marginTop: 20 }}  >
                     <View >
-                        <OrderItem flagFalse={flagFalse} itemName=" AReeb" orderImage={kfcImage} location='Burj Khalifa, Dubai' />
+                        <OrderItem time="20 minutes" flagFalse={flagFalse} itemName=" KFC" orderImage={kfcImage} location='Burj Khalifa, Dubai' />
                     </View>
                     <View style={{ marginTop: 10 }}>
-                        <OrderItem time="30 minutes" itemName=" Mcdonald's" orderImage={mcdonaldsImage} location='Dubai Box Park' />
+                        <OrderItem time="30 minutes" flagFalse={flagFalse} itemName=" Mcdonald's" orderImage={mcdonaldsImage} location='Dubai Box Park' />
                     </View>
                 </View>
 
@@ -43,9 +43,12 @@ export default function ActiveOrder(props) {
                         <Button backgroundColor="#C6E2F9" color="#FFFF" title="Reached Destination" />
                     </View> :
                         <View>
-                            <Button backgroundColor="#C6E2F9" color="#FFFF" title="Cancel Order" />
-
-                            <Button backgroundColor="#C6E2F9" color="#FFFF" title="Reached Destination" />
+                            <View>
+                            <Button backgroundColor="#2196F3" color="#FFFF" title="Cancel Order" />
+                            </View>
+                            <View style={{marginTop:10}}>
+                            <Button backgroundColor="#2196F3" color="#FFFF" title="Reached Destination" />
+                            </View>
                         </View>}
 
                 </View>

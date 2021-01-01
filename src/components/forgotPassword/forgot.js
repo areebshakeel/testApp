@@ -22,9 +22,9 @@ export default function ForgotPassword( props ) {
                 <View style={styles.forgotPasswordHeading}>
                     <Text style={styles.forgotPasswordHeadingText} >Forgot Password?</Text>
                 </View>
-                <View style={{marginTop:30}} > 
+                <View style={{marginTop:30, padding:10}} > 
                     <View>
-                        <Input label="Enter your Email Address*" />
+                        <Input label="Enter your email address*" />
                     </View>
                     <View onPress={()=>props.flagFalse()}  style={{marginTop:10}}  >
                         <Button  backgroundColor="#2196F3" title="Submit" color="#FFFF" />
@@ -39,7 +39,7 @@ const styles= StyleSheet.create({
     container:{
             // width:'?%',
             padding:4,
-            alignItems:'center',
+            // alignItems:'center',
             marginTop:20,
             backgroundColor:'#FFFF'
     },
@@ -54,8 +54,9 @@ const styles= StyleSheet.create({
     },
     forgotPasswordHeading:{
         alignSelf:"flex-start",
-        marginLeft:10
-        // padding:4
+        marginLeft:15,
+        marginTop:20,
+        padding:2
     },
     arrow:{
         alignSelf:'flex-start',

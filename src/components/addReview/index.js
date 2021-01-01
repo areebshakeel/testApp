@@ -11,7 +11,12 @@ import StarIcon from 'react-native-vector-icons/FontAwesome'
 import TextArea from '../textArea'
 export default function AddReview(props) {
     const [flag, setFlag] = useState(true)
-    const [badge, setBadge] = useState(true)
+    const [star1, setstar1] = useState(true)
+    const [star2, setstar2] = useState(true)
+    const [star3, setstar3] = useState(true)
+    const [star4, setstar4] = useState(true)
+    const [star5, setstar5] = useState(true)
+
     function flagFalse() {
         setFlag(false)
     }
@@ -35,16 +40,20 @@ export default function AddReview(props) {
                     </View>
                 </View>
                 <View style={styles.starIconCOntainer}>
-                    {
-                        star.map(item => <StarIcon onPress={() => setBadge(!badge)} name="star" size={25} color={badge ? "#AEAEAE" : '#2196F3'} />
-                        )
-                    }
+
+                    <StarIcon onPress={() => setstar1(!star1)} name="star" size={25} color={star1 ? "#AEAEAE" : '#2196F3'} />
+                    <StarIcon onPress={() => setstar2(!star2)} name="star" size={25} color={star2 ? "#AEAEAE" : '#2196F3'} />
+                    <StarIcon onPress={() => setstar3(!star3)} name="star" size={25} color={star3 ? "#AEAEAE" : '#2196F3'} />
+                    <StarIcon onPress={() => setstar4(!star4)} name="star" size={25} color={star4 ? "#AEAEAE" : '#2196F3'} />
+                    <StarIcon onPress={() => setstar5(!star5)} name="star" size={25} color={star5 ? "#AEAEAE" : '#2196F3'} />
+
+
                 </View>
                 <View style={{ marginTop: 10 }} >
                     <TextArea placeholder="" label="Write a Review" />
                 </View>
                 <View style={{ marginTop: 10 }} >
-                <Button backgroundColor="#2196F3" color="#FFFF" title="Submit" />
+                    <Button backgroundColor="#2196F3" color="#FFFF" title="Submit" />
                 </View>
 
 

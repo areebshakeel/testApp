@@ -48,7 +48,7 @@ export default function PersonalInfo(props) {
           <SecurityInput changeIsHidden={changeIsHidden}  isHidden={isHidden} label="Password*" />
         </View>
         <View>
-          <SecurityInput label="Re-Enter Password*" />
+          <SecurityInput changeIsHidden={changeIsHidden}  isHidden={isHidden} label="Re-Enter Password*" />
         </View>
         <View style={styles.checkboxContainer} >
           <CheckBox
@@ -66,7 +66,7 @@ export default function PersonalInfo(props) {
           </Text>
         </View>
         <View style={{marginTop:10}} >
-          <Button title="Next" backgroundColor="#2196F3" color="#FFFF" />
+          <Button  title="Next" backgroundColor="#2196F3" color="#FFFF" />
         </View>
       </View>
 
