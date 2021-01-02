@@ -77,9 +77,9 @@ function App(){
       {/* <WelcomeScreen/> */}
       {/* <PaymentScreen/> */}
       {/* <Login/> */}
-      <CreateProfile/>
+      {/* <CreateProfile/> */}
       {/* <PaymentMethod/> */}
-      {/* <ForgotPasswordScreen/> */}
+      <ForgotPasswordScreen/>
       {/* <Wallet/> */}
       {/* <ActiveOrder/> */}
       {/* <AddReview/> */}
