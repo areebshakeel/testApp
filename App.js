@@ -70,8 +70,8 @@ function App(){
     <View>
       {/* <WelcomeScreen/> */}
       {/* <PaymentScreen/> */}
-      {/* <Login/> */}
-      <CreateProfile/>
+      <Login/>
+      {/* <CreateProfile/> */}
     </View>
   )
 
