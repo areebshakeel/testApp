@@ -17,6 +17,11 @@ import PaymentScreen from './src/components/index'
 // import OrderCompleteView from './android/app/src/components/orderComplete/index.js'
 import WelcomeScreen from './src/components/welcomeScreen'
 import CreateProfile from './src/components/createProfile'
+import PaymentMethod from './src/components/payment method'
+import ForgotPasswordScreen from './src/components/forgotPassword'
+import Wallet from './src/components/Wallet'
+import ActiveOrder from './src/components/activeOrder'
+import AddReview from './src/components/addReview'
 
 // const tabs = {
 //   HomeScreen: { // < Screen name
@@ -68,10 +73,23 @@ function App(){
   
   return (
     <View>
+      
       {/* <WelcomeScreen/> */}
       {/* <PaymentScreen/> */}
+<<<<<<< HEAD
       <Login/>
       {/* <CreateProfile/> */}
+=======
+      {/* <Login/> */}
+      <CreateProfile/>
+      {/* <PaymentMethod/> */}
+      {/* <ForgotPasswordScreen/> */}
+      {/* <Wallet/> */}
+      {/* <ActiveOrder/> */}
+      {/* <AddReview/> */}
+
+
+>>>>>>> 7b9892b2b51b661ba64fad65d3302fa811b60d24
     </View>
   )
 
