@@ -76,10 +76,6 @@ function App(){
       
       {/* <WelcomeScreen/> */}
       {/* <PaymentScreen/> */}
-<<<<<<< HEAD
-      <Login/>
-      {/* <CreateProfile/> */}
-=======
       {/* <Login/> */}
       <CreateProfile/>
       {/* <PaymentMethod/> */}
@@ -89,7 +85,6 @@ function App(){
       {/* <AddReview/> */}
 
 
->>>>>>> 7b9892b2b51b661ba64fad65d3302fa811b60d24
     </View>
   )
 
