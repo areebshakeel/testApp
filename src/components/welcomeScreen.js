@@ -6,8 +6,8 @@ import { ScrollView } from 'react-native-gesture-handler'
 
 export default function Welcome() {
     return (
-        <ScrollView>
-            <View style={{marginTop:60}}>
+        <ScrollView style={{backgroundColor:'#FFFF'}}>
+            <View style={{marginTop:60, backgroundColor:"#FFFF"}}>
             <View style={styles.headingContainer}>
                 <Text style={styles.welcomeHeading} >Welcome to FoodApp</Text>
                 <Text style={styles.description} >Food add satisfies your food craving with your favurite food and resturants,

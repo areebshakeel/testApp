@@ -6,14 +6,12 @@ import Input from '../Input'
 import Button from '../Button'
 import AntIcon from 'react-native-vector-icons/AntDesign'
 import Icon from 'react-native-vector-icons/AntDesign'
-import PasswordInput from '../passwordInput'
-
-export default function ResetPassword() {
-
+import PasswordInput from '../passwordInput/index'
+export default function ResetPassword(props) {
     return (
         <ScrollView style={{ backgroundColor: '#FFFF'}} >
             <View style={styles.container}>
-                <View style={styles.arrow} >
+                <View style={styles.arrow}  >
                     <Icon name="arrowleft" size={30} />
                 </View>
                 <View style={styles.imageContainer} >
@@ -27,9 +25,9 @@ export default function ResetPassword() {
                         <PasswordInput label='Enter New Password*' />
                     </View>
                     <View>
-                        <PasswordInput label='Re-Enter Password*' />
+                        <PasswordInput {...props} label='Re-Enter Password*' />
                     </View>
-                    <View style={{ marginTop: 10 }}  >
+                    <View onTouchEnd={()=>props.flagFalse()} style={{ marginTop: 10 }}  >
                         <Button backgroundColor="#2196F3" title="Submit" color="#FFFF" />
                     </View>
                 </View>

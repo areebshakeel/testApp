@@ -74,12 +74,12 @@ function App(){
   return (
     <View>
       
-      {/* <WelcomeScreen/> */}
+      <WelcomeScreen/>
       {/* <PaymentScreen/> */}
       {/* <Login/> */}
       {/* <CreateProfile/> */}
       {/* <PaymentMethod/> */}
-      <ForgotPasswordScreen/>
+      {/* <ForgotPasswordScreen/> */}
       {/* <Wallet/> */}
       {/* <ActiveOrder/> */}
       {/* <AddReview/> */}

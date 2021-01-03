@@ -8,15 +8,16 @@ import EntypoIcon from 'react-native-vector-icons/Entypo'
 
 export default function PasswordInput(props) {
     const [isHidden, setIsHidden]= useState(true)
+    console.log(props)
     return (
         <View>
             <Text style={styles.labelText}>{ props.label}</Text>
         <View style={styles.container} >
             {/* <EntypoIcon name="eye" size={30} color='#707070' /> */}
 
-            <TextInput style={styles.input} secureTextEntry={ true}/>
+            <TextInput style={styles.input} secureTextEntry={ isHidden}/>
             { isHidden?
-            <EntypoIcon name="eye-with-line" size={30} color='#707070'  style={{marginLeft:10}} />
+            <EntypoIcon onPress={()=>setIsHidden(!isHidden)}  name="eye-with-line" size={30} color='#707070'  style={{marginLeft:10}} />
             :
             <EntypoIcon onPress={()=>setIsHidden(!isHidden)}  name="eye" size={30} color='#707070'  style={{marginLeft:10}} />
 

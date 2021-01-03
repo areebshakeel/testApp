@@ -26,7 +26,7 @@ export default function ForgotPassword( props ) {
                     <View>
                         <Input label="Enter your email address*" />
                     </View>
-                    <View onPress={()=>props.flagFalse()}  style={{marginTop:10}}  >
+                    <View onTouchEnd={()=>props.flagFalse()}  style={{marginTop:10}}  >
                         <Button  backgroundColor="#2196F3" title="Submit" color="#FFFF" />
                     </View>
                 </View>

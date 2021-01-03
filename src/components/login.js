@@ -118,7 +118,7 @@ const Login = () => {
         <SocialMeidaButton
           color="white"
           backgroundColor="#3b5998"
-          title="Connect with Facebook"
+          title="connect with Facebook"
           icon={() => <Icon name="facebook" size={30} color="white" />}
         />
       </View>
@@ -126,7 +126,7 @@ const Login = () => {
         <SocialMeidaButton
           color="white"
           backgroundColor="#2196F3"
-          title="Connect with Google"
+          title="connect with Google"
           icon={() => <Icon name="google" size={30} color="white" />}
         />
       </View>
