@@ -74,10 +74,10 @@ function App(){
   return (
     <View>
       
-      {/* <WelcomeScreen/> */}
+      <WelcomeScreen/>
       {/* <PaymentScreen/> */}
       {/* <Login/> */}
-      <CreateProfile/>
+      {/* <CreateProfile/> */}
       {/* <PaymentMethod/> */}
       {/* <ForgotPasswordScreen/> */}
       {/* <Wallet/> */}

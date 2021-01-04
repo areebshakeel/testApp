@@ -44,7 +44,7 @@ export default function VehicleRegistration(props) {
         <View style={styles.inputContainer} >
           <Input label="Color*" />
         </View>
-        <View style={styles.inputContainer} >
+        <View onTouchEnd={()=>props.badgeFalse()} style={styles.inputContainer} >
           <Button title="Register Vehicle" backgroundColor="#2196F3" color="#FFFF" />
         </View>
 

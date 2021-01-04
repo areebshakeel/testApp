@@ -8,6 +8,7 @@ export default function CreateProfile() {
   const [badge, setBadge] = useState(true);
   function flagFalse() {
     setFlag(false);
+    alert('function Chalaa')
     // alert(flag)
   }
 
@@ -17,13 +18,13 @@ export default function CreateProfile() {
   return (
     <View>
       {flag ? (
-        <MobileVerification />
+      <PersonalInfo flagFalse={flagFalse} />
         ) : !flag && badge ? (
-          <PersonalInfo flagFalse={flagFalse} />
+          <VehicleRegistration badgeFalse={badgeFalse} />
           ) : !flag && !badge ? (
-            <VehicleRegistration badgeFalse={badgeFalse} />
+            <MobileVerification />
             ) : (
-        <Text></Text>
+              <Text></Text>
       )}
     </View>
   );

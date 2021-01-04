@@ -65,8 +65,8 @@ export default function PersonalInfo(props) {
             }}>     I agree Terms & Conditions & Privacy Policy
           </Text>
         </View>
-        <View style={{marginTop:10}} >
-          <Button  title="Next" backgroundColor="#2196F3" color="#FFFF" />
+        <View onTouchEnd={()=>props.flagFalse()} style={{marginTop:10}} >
+          <Button   title="Next" backgroundColor="#2196F3" color="#FFFF" />
         </View>
       </View>
 

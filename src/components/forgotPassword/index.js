@@ -8,12 +8,13 @@ export default function ForgotPasswordScreen(){
 
     const [flag, setFlag] = useState(true)
     function flagFalse(){
-        setFlag(false)
+        setFlag(!flag)
     }
     return(
         <View>
-            {/* <ForgotPassword/> */}
-            <ResetPassword/> 
+            {flag? <ForgotPassword flagFalse={()=>flagFalse(flag)}  />
+            :  <ResetPassword flagFalse={()=>flagFalse(flag)} /> 
+        }
             
         </View>
     )
