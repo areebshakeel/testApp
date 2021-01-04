@@ -23,6 +23,7 @@ import Wallet from './src/components/Wallet'
 import ActiveOrder from './src/components/activeOrder'
 import AddReview from './src/components/addReview'
 import OrderHistory from './src/components/orderHistory'
+import Profile from './src/components/profile'
 
 // const tabs = {
 //   HomeScreen: { // < Screen name
@@ -84,8 +85,8 @@ function App(){
       {/* <Wallet/> */}
       {/* <ActiveOrder/> */}
       {/* <AddReview/> */}
-      <OrderHistory/>
-
+      {/* <OrderHistory/> */}
+      <Profile/>
 
     </View>
   )

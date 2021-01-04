@@ -21,6 +21,7 @@ export default function OrderHistory() {
             </View>
             {orders.map(item => <View style={{ marginTop: 20 }} >
                 <OrderCard />
+                <View style={styles.line} ></View>
             </View>)}
 
         </View>
@@ -39,4 +40,8 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-start',
 
     },
+    line:{
+        borderTopWidth:2,
+        borderColor:'#7F7E7F'
+    }
 })
