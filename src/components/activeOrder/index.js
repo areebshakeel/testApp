@@ -7,12 +7,13 @@ import kfcImage from '../../../assets/kfc.png'
 import mcdonaldsImage from '../../../assets/macdonalds.png'
 import OrderItem from './orderItem'
 import Button from '../Button'
+import DownArrow from 'react-native-vector-icons/Entypo'
 
 export default function ActiveOrder(props) {
     const [flag, setFlag] = useState(true)
 
-    function flagFalse(){
-        setFlag(false)
+    function flagFalse() {
+        setFlag(!flag)
     }
 
     return (
@@ -30,24 +31,32 @@ export default function ActiveOrder(props) {
 
                 <View style={{ marginTop: 20 }}  >
                     <View >
-                        <OrderItem time="20 minutes" flagFalse={flagFalse} itemName=" KFC" orderImage={kfcImage} location='Burj Khalifa, Dubai' />
+                        <OrderItem backgroundColor={flag ? '#F9F9F9' : '#2196F3'} textColor={flag ? '#464951' : '#FFFF'}
+                            time="20 minutes" flagFalse={flagFalse} itemName=" KFC" orderImage={kfcImage} location='Burj Khalifa, Dubai' />
                     </View>
                     <View style={{ marginTop: 10 }}>
-                        <OrderItem time="30 minutes" flagFalse={flagFalse} itemName=" Mcdonald's" orderImage={mcdonaldsImage} location='Dubai Box Park' />
+                        <OrderItem backgroundColor='#F9F9F9' textColor='#464951' time="30 minutes" flagFalse={flagFalse} itemName=" Mcdonald's" orderImage={mcdonaldsImage} location='Dubai Box Park' />
                     </View>
+                    { !flag?
+                    <View style={{ alignSelf: "center" }}>
+                        <DownArrow color='#464951' name="chevron-small-down" size={30} />
+                    </View>
+                    : <Text></Text>
+                    }
                 </View>
 
-                <View style={{ marginTop: 100 }}>
+                <View style={{ marginTop: 50}}>
 
                     {flag ? <View>
                         <Button backgroundColor="#C6E2F9" color="#FFFF" title="Reached Destination" />
                     </View> :
                         <View>
+
                             <View>
-                            <Button backgroundColor="#2196F3" color="#FFFF" title="Cancel Order" />
+                                <Button backgroundColor="#2196F3" color="#FFFF" title="Reached Destination" />
                             </View>
-                            <View style={{marginTop:10}}>
-                            <Button backgroundColor="#2196F3" color="#FFFF" title="Reached Destination" />
+                            <View style={{ marginTop: 10 }}>
+                                <Button backgroundColor="#2196F3" color="#FFFF" title="Cancel Order" />
                             </View>
                         </View>}
 

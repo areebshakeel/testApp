@@ -22,6 +22,7 @@ import ForgotPasswordScreen from './src/components/forgotPassword'
 import Wallet from './src/components/Wallet'
 import ActiveOrder from './src/components/activeOrder'
 import AddReview from './src/components/addReview'
+import OrderHistory from './src/components/orderHistory'
 
 // const tabs = {
 //   HomeScreen: { // < Screen name
@@ -74,7 +75,7 @@ function App(){
   return (
     <View>
       
-      <WelcomeScreen/>
+      {/* <WelcomeScreen/> */}
       {/* <PaymentScreen/> */}
       {/* <Login/> */}
       {/* <CreateProfile/> */}
@@ -83,6 +84,7 @@ function App(){
       {/* <Wallet/> */}
       {/* <ActiveOrder/> */}
       {/* <AddReview/> */}
+      <OrderHistory/>
 
 
     </View>
