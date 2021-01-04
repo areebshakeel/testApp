@@ -17,12 +17,12 @@ export default function CreateProfile() {
   return (
     <View>
       {flag ? (
-        <VehicleRegistration badgeFalse={badgeFalse} />
+        <MobileVerification />
         ) : !flag && badge ? (
           <PersonalInfo flagFalse={flagFalse} />
-      ) : !flag && !badge ? (
-        <MobileVerification />
-      ) : (
+          ) : !flag && !badge ? (
+            <VehicleRegistration badgeFalse={badgeFalse} />
+            ) : (
         <Text></Text>
       )}
     </View>

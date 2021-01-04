@@ -15,7 +15,9 @@ export default function VehicleRegistration() {
             A verification code has been sent to your mobile phone.
           </Text>
         </View>
+        <View style={styles.imageContainer} >
         <Image source={MobileVerifyImage} />
+        </View>
         <View style={styles.allInputsContainer}>
           <Text style={styles.label}>Phone Number*</Text>
           <View style={styles.inputContainer}>
@@ -56,8 +58,11 @@ export default function VehicleRegistration() {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
+    // alignItems: 'center',
     backgroundColor:'white'
+  },
+  imageContainer:{
+    alignSelf:'center'
   },
   mobileVerifyHeading: {
     // alignItems:'flex-start',
@@ -94,6 +99,7 @@ const styles = StyleSheet.create({
   },
   allInputsContainer: {
     // padding: 4,
+    alignSelf:'center'
   },
   inputs: {
     // borderTopWidth: 1,
