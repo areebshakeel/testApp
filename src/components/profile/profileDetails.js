@@ -24,20 +24,24 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: 10,
+        padding: 15,
         borderBottomWidth: 1,
         borderColor: '#464951',
     },
     details: {
         flexDirection: "row",
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         width: '35%',
-        alignItems: "center"
+        alignSelf:'flex-start',
+        alignItems:'flex-start'
+        // alignItems: "center"
     },
     text: {
         color: '#464951',
         fontSize: 10,
-        fontFamily: 'Poppins-Medium'
+        fontFamily: 'Poppins-Medium',
+        textAlign:'center',
+        alignSelf:'center'
     },
 
 })
