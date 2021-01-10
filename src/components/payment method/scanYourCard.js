@@ -39,7 +39,7 @@ export default function ScanYourCard() {
 
                 </View>
 
-
+                <View>
                     <Button title="Add Method   " backgroundColor='#2196F3' color='#FFFFFF' />
                 </View>
 

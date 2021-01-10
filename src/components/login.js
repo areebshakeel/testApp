@@ -25,10 +25,13 @@ const Login = (props) => {
   const [isHidden, setIsHidden] = useState(true);
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(!isEnabled);
-
+  
   const signIn=()=>{
-    props.updateTheUser(userName)
+    console.log('hamaraaa kaaam=>>>>   ',userName)
+    updateUser(userName)
+    
   }
+  console.log("reducerData",props.userData.user)
   return (
     //    <Container>
     //        <Content style={{flex:1,backgroundColor:"red"}}>
@@ -58,7 +61,7 @@ const Login = (props) => {
             color="#9A9A9A"
             style={{ marginTop: 5 }}
           />
-          <TextInput onChange={(value)=>setUserName(value)} style={styles.inputText} placeholder="UserName" placeholderTextColor="#9A9A9A" />
+          <TextInput onChangeText={(value)=>setUserName(value)} style={styles.inputText} placeholder="UserName" placeholderTextColor="#9A9A9A" />
         </View>
         <View style={styles.inputs}>
           <AntIcon
@@ -155,13 +158,13 @@ const Login = (props) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    updateTheUser: (userName) => dispatch(updateUser(userName)),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     updateTheUser: (userName) => dispatch(updateUser(userName)),
+//   };
+// };
 
-export default connect(mapDispatchToProps)( Login)
+export default connect((storeState)=>({userData:storeState.userReducer}),{updateUser})( Login)
 
 const styles = StyleSheet.create({
   container: {

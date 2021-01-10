@@ -21,6 +21,7 @@
     "@react-navigation/material-bottom-tabs": "^5.3.10",
     "@react-navigation/material-top-tabs": "^5.3.10",
     "@react-navigation/native": "^5.8.10",
+    "axios": "^0.21.1",
     "i18n-js": "^3.8.0",
     "native-base": "^2.15.0",
     "react": "^17.0.1",
