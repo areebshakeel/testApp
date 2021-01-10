@@ -16,11 +16,19 @@ import AntIcon from 'react-native-vector-icons/AntDesign';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import SocialMeidaButton from '../common/socialMediaButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { connect } from "react-redux";
+import {updateUser} from '../redux/store/actions/userActions'
 
-const Login = () => {
+const Login = (props) => {
+  const [userName, setUserName] = useState('')
+  const [password,setPassword] = useState('')
   const [isHidden, setIsHidden] = useState(true);
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(!isEnabled);
+
+  const signIn=()=>{
+    props.updateTheUser(userName)
+  }
   return (
     //    <Container>
     //        <Content style={{flex:1,backgroundColor:"red"}}>
@@ -50,7 +58,7 @@ const Login = () => {
             color="#9A9A9A"
             style={{ marginTop: 5 }}
           />
-          <TextInput style={styles.inputText} placeholder="UserName" placeholderTextColor="#9A9A9A" />
+          <TextInput onChange={(value)=>setUserName(value)} style={styles.inputText} placeholder="UserName" placeholderTextColor="#9A9A9A" />
         </View>
         <View style={styles.inputs}>
           <AntIcon
@@ -93,7 +101,7 @@ const Login = () => {
           <Switch onValueChange={toggleSwitch} value={isEnabled} />
         </View>
       </View>
-      <TouchableOpacity style={styles.authBtnContainer}>
+      <TouchableOpacity onPress={signIn} style={styles.authBtnContainer}>
         <View style={styles.authButtonText}>
           <Text style={styles.authBtn}>Sign In</Text>
         </View>
@@ -147,7 +155,13 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateTheUser: (userName) => dispatch(updateUser(userName)),
+  };
+};
+
+export default connect(mapDispatchToProps)( Login)
 
 const styles = StyleSheet.create({
   container: {

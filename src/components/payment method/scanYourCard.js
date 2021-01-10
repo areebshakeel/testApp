@@ -39,47 +39,6 @@ export default function ScanYourCard() {
                 </View>
 
 
-                {/* <View style={styles.pickerMainContainer}>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '42%' }} >
-                        <View>
-                            <Text style={{ color: '#464951' }} >End Date</Text>
-                            <View style={styles.pickerContainer} >
-
-                                <Picker itemStyle={{color:'red',}} mode='dropdown'
-                                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)} 
-                                    selectedValue={'selectedValue'} >
-                                    {
-                                        months.map(item => <Picker.Item label={item} value={item} />)
-                                    }
-                                </Picker>
-
-
-
-                            </View>
-                        </View>
-                        <View>
-                            <Text></Text>
-                            <View style={styles.picker2Container} >
-                            <Picker itemStyle={{color:'red',}} mode='dropdown'
-                                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)} 
-                                    selectedValue={'selectedValue'} >
-                                    {
-                                     years.map(item => <Picker.Item label={item} value={item} />)
-                                    }
-                                </Picker>
-
-                            </View>
-                        </View>
-                    </View>
-                    <View>
-                        <Text style={{ color: '#464951' }} >CCV</Text>
-
-                        <View style={styles.ccvInput} >
-                            {/* <TextInput style={{minWidth:5, maxWidth:15}} /> */}
-                {/* </View >
-                    </View>
-                </View> */}
-
                 <View style={styles.pickerContainer} >
                     <View style={{
                         flexDirection: 'row', justifyContent: 'space-between',
