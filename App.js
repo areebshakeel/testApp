@@ -22,8 +22,13 @@ import ForgotPasswordScreen from './src/components/forgotPassword'
 import Wallet from './src/components/Wallet'
 import ActiveOrder from './src/components/activeOrder'
 import AddReview from './src/components/addReview'
+<<<<<<< HEAD
 import { Provider } from "react-redux";
 import  store  from './src/redux/store'
+=======
+import OrderHistory from './src/components/orderHistory'
+import Profile from './src/components/profile'
+>>>>>>> a7a1a80e756392301e2ff75c8c1ef5878df65cc6
 
 // const tabs = {
 //   HomeScreen: { // < Screen name
@@ -78,15 +83,21 @@ function App(){
     <View>
       
       {/* <WelcomeScreen/> */}
+<<<<<<< HEAD
       {/* <PaymentScreen/> */} 
       <Login/>
+=======
+      {/* <PaymentScreen/> */}
+      {/* <Login/> */}
+>>>>>>> a7a1a80e756392301e2ff75c8c1ef5878df65cc6
       {/* <CreateProfile/> */}
       {/* <PaymentMethod/> */}
       {/* <ForgotPasswordScreen/> */}
       {/* <Wallet/> */}
       {/* <ActiveOrder/> */}
       {/* <AddReview/> */}
-
+      {/* <OrderHistory/> */}
+      <Profile/>
 
     </View>
     </Provider>

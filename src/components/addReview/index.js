@@ -36,7 +36,7 @@ export default function AddReview(props) {
                 </View>
                 <View style={{ marginTop: 20 }}  >
                     <View >
-                        <OrderItem flagFalse={flagFalse} itemName=" KFC" orderImage={kfcImage} location='Burj Khalifa, Dubai' />
+                        <OrderItem backgroundColor="#F9F9F9" flagFalse={flagFalse} itemName=" KFC" orderImage={kfcImage} location='Burj Khalifa, Dubai' />
                     </View>
                 </View>
                 <View style={styles.starIconCOntainer}>
