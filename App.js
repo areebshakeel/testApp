@@ -24,6 +24,8 @@ import ActiveOrder from './src/components/activeOrder'
 import AddReview from './src/components/addReview'
 import OrderHistory from './src/components/orderHistory'
 import Profile from './src/components/profile'
+import {Provider} from 'react-redux'
+import store from './src/redux/store'
 
 // const tabs = {
 //   HomeScreen: { // < Screen name
@@ -74,11 +76,12 @@ function App(){
   
   
   return (
+    <Provider store={store}>
     <View>
       
       {/* <WelcomeScreen/> */}
       {/* <PaymentScreen/> */}
-      {/* <Login/> */}
+      <Login/>
       {/* <CreateProfile/> */}
       <PaymentMethod/>
       {/* <ForgotPasswordScreen/> */}
@@ -89,6 +92,7 @@ function App(){
       {/* <Profile/> */}
 
     </View>
+    </Provider>
   )
 
 }
@@ -100,7 +104,8 @@ function App(){
   //     activeTintColor: "#5290fa",
   //     inactiveTintColor: "#fff",
   //     activeTabBackgrounds:"#be0000",
-  //     tabStyle:{backgroundColor:"#5290fa"}
+  //     tabStyle:{backgroundCo
+  // \\\lor:"#5290fa"}
   //   }}
   //   appearence={{
   //     activeTabBackgrounds:"#fff",

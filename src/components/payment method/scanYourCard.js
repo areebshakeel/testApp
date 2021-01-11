@@ -39,40 +39,7 @@ export default function ScanYourCard() {
 
                 </View>
 
-
-                <View style={{ marginTop: 10 }}  >
-                    <View style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        width: '80%',
-                        // alignSelf: 'center',
-                        padding: 2
-                    }} >
-                        <Text>End Date</Text>
-                        <Text>CCV</Text>
-                    </View>
-                    <View style={styles.pickerCotainer} >
-                        <View style={styles.picker1} >
-                            <Picker style={styles.pickerText} mode="dialog" selectedValue={monthValue} 
-                            onValueChange={(itemValue, itemIndex) => setMonthValue(itemValue)} >
-                                {months.map(item => <Picker.Item label={item} value={item} />)}
-                            </Picker>
-                        </View  >
-                        <View style={styles.picker2} >
-                            <Picker style={styles.pickerText} mode="dialog"
-                            onValueChange={(itemValue)=>setYearValue(itemValue)} >
-                                {years.map(item => <Picker.Item label={item} value={item} />)}
-                            </Picker>
-                        </View>
-                        <View style={styles.cvv} >
-                            <TextInput />
-                        </View>
-                    </View>
-
-                </View>
-
-
-                <View style={{ marginTop: 10 }}>
+                <View>
                     <Button title="Add Method   " backgroundColor='#2196F3' color='#FFFFFF' />
                 </View>
 
