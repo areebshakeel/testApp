@@ -17,10 +17,9 @@ import EntypoIcon from 'react-native-vector-icons/Entypo';
 import SocialMeidaButton from '../common/socialMediaButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from "react-redux";
-import store from '../redux/store'
-import {userLoginSuccess} from '../redux/user/userActions'
+import {userLoginRequest} from '../redux/user/userActions'
 
-const Login = (props) => {
+const Login = ({updateTheUser,userData}) => {
   const [userName, setUserName] = useState('')
   const [password,setPassword] = useState('')
   const [isHidden, setIsHidden] = useState(true);
@@ -29,9 +28,10 @@ const Login = (props) => {
   
   const signIn=()=>{
     console.log('onPressEvent-->',userName)
-    userLoginSuccess(userName)  
+    let obj={email:userName,password}
+    updateTheUser(obj)  
   }
-
+console.log(userData,'TEST ABCBAB CAB')
   return (
     //    <Container>
     //        <Content style={{flex:1,backgroundColor:"red"}}>
@@ -74,6 +74,7 @@ const Login = (props) => {
             secureTextEntry={isHidden ? true : false}
             style={styles.inputText}
             placeholder="Password"
+            onChangeText={(value)=>setPassword(value)}
             placeholderTextColor="#9A9A9A"
 
           />
@@ -159,10 +160,18 @@ const Login = (props) => {
 };
 const mapDispatchToprops=(dispatch)=>{
   return {
-    updateTheUser: (userName) => dispatch(userLoginSuccess(userName))
+    updateTheUser: (userName) => dispatch(userLoginRequest(userName))
 }
 }
-export default connect(mapDispatchToprops) (Login)
+function mapStateToProps(state, ownProps) {
+  // const { visibilityFilter } = state
+  const userData=state.userReducer.user.data
+  // const { id } = ownProps
+  // const todo = getTodoById(state, id)
+
+  // // component receives additionally:
+  return {userData  }
+}export default connect(mapStateToProps,mapDispatchToprops) (Login)
 
 const styles = StyleSheet.create({
   container: {

@@ -25,7 +25,8 @@ import AddReview from './src/components/addReview'
 import OrderHistory from './src/components/orderHistory'
 import Profile from './src/components/profile'
 import {Provider} from 'react-redux'
-import store from './src/redux/store'
+// import Store from './src/redux/store'
+import {store} from './src/redux/store'
 
 // const tabs = {
 //   HomeScreen: { // < Screen name

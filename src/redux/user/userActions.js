@@ -1,17 +1,29 @@
 import {userActionTypes} from './userActionTypes'
+import axios from 'axios'
 
-export const userLoginRequest=payLoad=>({
-    type:userActionTypes.USER_LOGIN_REQUEST,
-    payload
-})
+// type:userActionTypes.USER_LOGIN_REQUEST,
+// payload
+
+export function userLoginRequest(payLoad){
+     console.log(payLoad)
+    return (dispatch => {
+     axios.post('https://devfoodapp.m3tech.com.pk/public/api/login',payLoad).then(res=>{
+          return  dispatch({
+               type: userActionTypes.USER_LOGIN_SUCCESS,
+                res
+              })
+            })
+        })
+
+      
+}
 
 export const userLoginSuccess = async (payload) => {
     console.log('data from component-->',payload)
-let res= await axios.post('https://devfoodapp.m3tech.com.pk/public/api/login')
 console.log('response',res)    
 return  {
         type: userActionTypes.USER_LOGIN_SUCCESS,
-        
+        data:payload
     }
 }
 
