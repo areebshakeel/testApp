@@ -17,7 +17,8 @@ import EntypoIcon from 'react-native-vector-icons/Entypo';
 import SocialMeidaButton from '../common/socialMediaButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from "react-redux";
-import {updateUser} from '../redux/store/actions/userActions'
+import store from '../redux/store'
+import {userLoginSuccess} from '../redux/user/userActions'
 
 const Login = (props) => {
   const [userName, setUserName] = useState('')
@@ -27,11 +28,10 @@ const Login = (props) => {
   const toggleSwitch = () => setIsEnabled(!isEnabled);
   
   const signIn=()=>{
-    console.log('hamaraaa kaaam=>>>>   ',userName)
-    updateUser(userName)
-    
+    console.log('onPressEvent-->',userName)
+    userLoginSuccess(userName)  
   }
-  console.log("reducerData",props.userData.user)
+
   return (
     //    <Container>
     //        <Content style={{flex:1,backgroundColor:"red"}}>
@@ -157,14 +157,12 @@ const Login = (props) => {
     </ScrollView>
   );
 };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     updateTheUser: (userName) => dispatch(updateUser(userName)),
-//   };
-// };
-
-export default connect((storeState)=>({userData:storeState.userReducer}),{updateUser})( Login)
+const mapDispatchToprops=(dispatch)=>{
+  return {
+    updateTheUser: (userName) => dispatch(userLoginSuccess(userName))
+}
+}
+export default connect(mapDispatchToprops) (Login)
 
 const styles = StyleSheet.create({
   container: {
