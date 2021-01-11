@@ -80,13 +80,13 @@ function App(){
       {/* <PaymentScreen/> */}
       {/* <Login/> */}
       {/* <CreateProfile/> */}
-      {/* <PaymentMethod/> */}
+      <PaymentMethod/>
       {/* <ForgotPasswordScreen/> */}
       {/* <Wallet/> */}
       {/* <ActiveOrder/> */}
       {/* <AddReview/> */}
       {/* <OrderHistory/> */}
-      <Profile/>
+      {/* <Profile/> */}
 
     </View>
   )
