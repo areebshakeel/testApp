@@ -2,9 +2,7 @@ import {userActionTypes} from './userActionTypes'
 
 const INITIAL_STATE={
     loading:false,
-    // email:"",
-    success:false,
-    error:false,
+    error:null,
 
 }
 
@@ -17,20 +15,27 @@ const userReducer=(state=INITIAL_STATE, action)=>{
         case userActionTypes.USER_LOGIN_REQUEST:
             return{
                 ...state,
-                error:false,
+                error:null,
                 loading:true
                 
             }
         case userActionTypes.USER_LOGIN_SUCCESS:
+            const {res:{data}}=action
+            
+            console.log('action ka dataa-->> ',data)
             return{
                 ...state,
-                user:action.res.data,
+                user:data,
                 loading:false,
-                success:true,
-                error:false
-            }    
-            default: {
-                return {...state};
+                error:null
+            }
+        case userActionTypes.USER_LOGIN_FAILED:
+            return{
+                error:action.error,
+                loading:false
+            }        
+        default: {
+            return {...state};
               }
         
     }
