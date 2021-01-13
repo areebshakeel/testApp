@@ -32,6 +32,7 @@ const Login = ({updateTheUser,userData}) => {
     updateTheUser(obj)  
   }
 console.log(userData,'TEST ABCBAB CAB')
+
   return (
     //    <Container>
     //        <Content style={{flex:1,backgroundColor:"red"}}>
@@ -160,15 +161,16 @@ console.log(userData,'TEST ABCBAB CAB')
 };
 const mapDispatchToprops=(dispatch)=>{
   return {
-    updateTheUser: (userName) => dispatch(userLoginRequest(userName))
+    updateTheUser: (userObj) => dispatch(userLoginRequest(userObj))
 }
 }
 function mapStateToProps(state, ownProps) {
   // const { visibilityFilter } = state
-  const userData=state.userReducer.user.data
+  const userData=state.userReducer.user?.data || {}
   // const { id } = ownProps
   // const todo = getTodoById(state, id)
-
+  const{token, profile:{email},Message}=userData
+console.log("token=>> ",token, "email==>",email)
   // // component receives additionally:
   return {userData  }
 }export default connect(mapStateToProps,mapDispatchToprops) (Login)
